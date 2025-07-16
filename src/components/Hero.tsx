@@ -60,7 +60,7 @@ const Hero = () => {
                   <Linkedin className="h-5 w-5" />
                 </Button>
               </a>
-              <a href="rakesh374@outlook.com" target="_blank" rel="noopener noreferrer" className="inline-block">
+              <a href="mailto:rakesh374@outlook.com" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-primary">
                   <Mail className="h-5 w-5" />
                 </Button>
