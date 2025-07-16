@@ -48,7 +48,7 @@ https://your-deployment-url.com
 ## 📦 Getting Started
 ### 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/rakesh-portfolio.git
+git clone https://github.com/rakes-dev/MyPortfolio
 cd rakesh-portfolio
 ```
 
@@ -74,9 +74,9 @@ npm run build
 - SEO and accessibility enhancements
 
 ## 📬 Contact
-- 📧 Email: sardar.rakesh@icloud.com
-- 🔗 GitHub: [yourusername](https://github.com/yourusername)
-- 💼 LinkedIn: [yourprofile](https://linkedin.com/in/yourprofile)
+- 📧 Email: rakesh374@outlook.com
+- 🔗 GitHub: [rakes-dev](https://github.com/rakes-dev)
+- 💼 LinkedIn: [Rakesh Sardar](https://linkedin.com/in/rakesh-sardar-763a40217)
 
 ---
 
