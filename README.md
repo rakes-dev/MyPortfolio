@@ -17,9 +17,7 @@ https://your-deployment-url.com
 │   └── robots.txt
 ├── src/
 │   ├── assets/                  # Static assets like images
-│   │   └── hero-workspace.jpg
-│   ├── components/
-│   │   └── ui/                  # UI components (About, Contact, etc.)
+│   ├── components/              # UI components (About, Contact, etc.)
 │   ├── hooks/                   # Custom React hooks
 │   ├── lib/                     # Utility libraries
 │   ├── pages/                   # Routing pages (Index, NotFound)
