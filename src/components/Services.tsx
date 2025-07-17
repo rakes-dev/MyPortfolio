@@ -3,6 +3,21 @@ import { Button } from "@/components/ui/button";
 import { Globe, ShoppingBag, Server, Wrench } from "lucide-react";
 
 const Services = () => {
+  const scrollToContact = (serviceName: string) => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      // Store the selected service for the contact form
+      setTimeout(() => {
+        const messageTextarea = document.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
+        if (messageTextarea && !messageTextarea.value) {
+          messageTextarea.value = `Hi! I'm interested in your ${serviceName} service. Could you please provide more information?`;
+          messageTextarea.focus();
+        }
+      }, 500);
+    }
+  };
+
   const services = [
     {
       title: "Web App Development",
@@ -118,7 +133,10 @@ const Services = () => {
                 
                 {/* CTA Button */}
                 <div className="pt-4">
-                  <Button className="w-full bg-primary hover:bg-primary/90">
+                  <Button 
+                    className="w-full bg-primary hover:bg-primary/90"
+                    onClick={() => scrollToContact(service.title)}
+                  >
                     Get Started
                   </Button>
                 </div>
@@ -178,10 +196,19 @@ const Services = () => {
                 Let's discuss your requirements and create something amazing together.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90"
+                  onClick={() => scrollToContact("General Inquiry")}
+                >
                   Get Free Quote
                 </Button>
-                <Button size="lg" variant="outline" className="border-primary/20 hover:bg-primary/10">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-primary/20 hover:bg-primary/10"
+                  onClick={() => scrollToContact("Consultation")}
+                >
                   Schedule Consultation
                 </Button>
               </div>

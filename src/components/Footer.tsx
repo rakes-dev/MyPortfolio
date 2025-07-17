@@ -18,15 +18,21 @@ const Footer = () => {
               Always ready to take on new challenges and learn cutting-edge technologies.
             </p>
             <div className="flex space-x-3">
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-primary">
-                <Github className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-primary">
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-primary">
-                <Mail className="h-5 w-5" />
-              </Button>
+              <a href="https://github.com/rakes-dev" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-primary">
+                  <Github className="h-5 w-5" />
+                </Button>
+              </a>
+              <a href="https://www.linkedin.com/in/rakesh-sardar-763a40217/" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-primary">
+                  <Linkedin className="h-5 w-5" />
+                </Button>
+              </a>
+              <a href="mailto:rakesh374@outlook.com" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-primary">
+                  <Mail className="h-5 w-5" />
+                </Button>
+              </a>
             </div>
           </div>
 

@@ -185,18 +185,24 @@ const Contact = () => {
                 <p className="text-muted-foreground">Follow my journey and connect on social platforms.</p>
               </CardHeader>
               <CardContent className="space-y-4">
-                <Button variant="outline" className="w-full justify-start border-border hover:bg-primary/10">
-                  <Github className="mr-3 h-5 w-5" />
-                  GitHub - View My Code
-                </Button>
-                <Button variant="outline" className="w-full justify-start border-border hover:bg-tech-blue/10">
-                  <Linkedin className="mr-3 h-5 w-5" />
-                  LinkedIn - Professional Profile
-                </Button>
-                <Button variant="outline" className="w-full justify-start border-border hover:bg-primary/10">
-                  <Mail className="mr-3 h-5 w-5" />
-                  Email - Direct Contact
-                </Button>
+                <a href="https://github.com/rakes-dev" target="_blank" rel="noopener noreferrer" className="inline-block">
+                  <Button variant="outline" className="w-full justify-start border-border hover:bg-primary/10">
+                    <Github className="mr-3 h-5 w-5" />
+                    GitHub - View My Code
+                  </Button>
+                </a>
+                <a href="https://www.linkedin.com/in/rakesh-sardar-763a40217/" target="_blank" rel="noopener noreferrer" className="inline-block">
+                  <Button variant="outline" className="w-full justify-start border-border hover:bg-tech-blue/10">
+                    <Linkedin className="mr-3 h-5 w-5" />
+                    LinkedIn - Professional Profile
+                  </Button>
+                </a>
+                <a href="mailto:rakesh374@outlook.com" target="_blank" rel="noopener noreferrer" className="inline-block">
+                  <Button variant="outline" className="w-full justify-start border-border hover:bg-primary/10">
+                    <Mail className="mr-3 h-5 w-5" />
+                    Email - Direct Contact
+                  </Button>
+                </a>
               </CardContent>
             </Card>
 
