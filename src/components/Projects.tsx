@@ -12,7 +12,7 @@ const Projects = () => {
       setTimeout(() => {
         const messageTextarea = document.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
         if (messageTextarea && !messageTextarea.value) {
-          messageTextarea.value = `Hi! I'm interested in your ${serviceName} service. Could you please provide more information?`;
+          messageTextarea.value = `Hi! I'm interested to ${serviceName} with you. Could you please provide more information?`;
           messageTextarea.focus();
         }
       }, 500);
