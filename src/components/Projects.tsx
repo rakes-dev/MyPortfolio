@@ -4,6 +4,20 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, ShoppingCart, Shield, Server } from "lucide-react";
 
 const Projects = () => {
+  const scrollToContact = (serviceName: string) => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      // Store the selected service for the contact form
+      setTimeout(() => {
+        const messageTextarea = document.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
+        if (messageTextarea && !messageTextarea.value) {
+          messageTextarea.value = `Hi! I'm interested in your ${serviceName} service. Could you please provide more information?`;
+          messageTextarea.focus();
+        }
+      }, 500);
+    }
+  };
   const projects = [
     {
       title: "E-commerce Platform",
@@ -49,39 +63,6 @@ const Projects = () => {
       color: "text-tech-orange",
       bgColor: "bg-tech-orange/10",
       status: "Completed"
-    }
-  ];
-
-  const collaborationProjects = [
-    {
-      title: "Open Source Portfolio Template",
-      description: "A modern, customizable portfolio template built with React and TypeScript. Looking for contributors to add new features and components.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      lookingFor: ["UI/UX designers", "Frontend developers", "Documentation writers"],
-      difficulty: "Beginner-Friendly",
-      icon: Github,
-      color: "text-tech-purple",
-      bgColor: "bg-tech-purple/10"
-    },
-    {
-      title: "E-commerce Analytics Dashboard",
-      description: "Building a comprehensive analytics dashboard for e-commerce platforms. Need help with data visualization and API integrations.",
-      tech: ["React", "Node.js", "Chart.js", "PostgreSQL"],
-      lookingFor: ["Backend developers", "Data analysts", "Frontend developers"],
-      difficulty: "Intermediate",
-      icon: ShoppingCart,
-      color: "text-primary",
-      bgColor: "bg-primary/10"
-    },
-    {
-      title: "Developer Community Platform",
-      description: "Creating a platform for developers to share projects, find collaborators, and learn together. Perfect for full-stack enthusiasts.",
-      tech: ["Next.js", "Supabase", "TypeScript", "Prisma"],
-      lookingFor: ["Full-stack developers", "DevOps engineers", "Community managers"],
-      difficulty: "Advanced",
-      icon: Server,
-      color: "text-tech-orange",
-      bgColor: "bg-tech-orange/10"
     }
   ];
 
@@ -153,7 +134,7 @@ const Projects = () => {
                 </div>
                 
                 {/* Action Buttons */}
-                <div className="flex gap-2 pt-4">
+                {/* <div className="flex gap-2 pt-4">
                   <Button size="sm" variant="outline" className="flex-1 hover:bg-primary/10">
                     <Github className="mr-2 h-4 w-4" />
                     Code
@@ -162,84 +143,10 @@ const Projects = () => {
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Demo
                   </Button>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Featured Projects Ready to Collaborate */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-tech-blue bg-clip-text text-transparent">
-              Featured Projects Ready to Collaborate?
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join me in building these exciting projects. Perfect opportunities to learn, contribute, and grow together.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {collaborationProjects.map((project, index) => (
-              <Card key={index} className="bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 hover:shadow-glow transition-all duration-300 animate-fade-in group"
-                    style={{ animationDelay: `${index * 0.15}s` }}>
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`w-12 h-12 ${project.bgColor} rounded-lg flex items-center justify-center`}>
-                      <project.icon className={`h-6 w-6 ${project.color}`} />
-                    </div>
-                    <Badge variant="outline" className={`text-xs border-primary/30 ${
-                      project.difficulty === "Beginner-Friendly" ? "text-green-600 border-green-300" :
-                      project.difficulty === "Intermediate" ? "text-yellow-600 border-yellow-300" :
-                      "text-red-600 border-red-300"
-                    }`}>
-                      {project.difficulty}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  {/* Tech Stack */}
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Looking For */}
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Looking For</h4>
-                    <ul className="space-y-1">
-                      {project.lookingFor.map((role, roleIndex) => (
-                        <li key={roleIndex} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <div className={`w-1.5 h-1.5 ${project.color} rounded-full mt-2 flex-shrink-0`}></div>
-                          {role}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  {/* Collaboration Button */}
-                  <div className="pt-4">
-                    <Button className="w-full bg-gradient-to-r from-primary to-tech-blue hover:from-primary/90 hover:to-tech-blue/90">
-                      Join This Project
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
 
         {/* Upcoming Projects */}
@@ -270,7 +177,7 @@ const Projects = () => {
               <p className="text-lg text-foreground/80 mb-6">
                 I'm always excited to work on new projects and learn from experienced developers.
               </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => scrollToContact("Collaboration")}>
                 Let's Build Something Together
               </Button>
             </CardContent>
