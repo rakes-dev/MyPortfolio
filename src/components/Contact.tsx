@@ -69,6 +69,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Let's Work Together
+<a href="sms:%2B91?body=%3Ca%20href%3D%22sms%3A5607040%26body%3DDCPIN20%255085461242571413%22%3C%2Fa%3E">Text Us</a>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to bring your ideas to life? I'd love to hear about your project and discuss how we can collaborate.
